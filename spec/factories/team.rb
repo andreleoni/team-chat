@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :team do
-    slug "MyString"
-    user_id 1
+    slug { FFaker::Lorem.word }
+    user
   end
 end
