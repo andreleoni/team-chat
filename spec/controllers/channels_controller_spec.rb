@@ -99,7 +99,7 @@ RSpec.describe ChannelsController, type: :controller do
     context "User is not team member" do
       it "returns http forbidden" do
         channel = create(:channel)
-        get :show, params: {id: channel.id}
+        get :show, params: { id: channel.id }
 
         expect(response).to have_http_status(:forbidden)
       end
