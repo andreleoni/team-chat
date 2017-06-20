@@ -3,7 +3,7 @@ FROM ruby:2.3-slim
 RUN apt-get update && apt-get install -qq -y --no-install-recommends \
       build-essential nodejs libpq-dev
 
-ENV INSTALL_PATH /onebitchat
+ENV INSTALL_PATH /TeamChat
 
 RUN mkdir -p $INSTALL_PATH
 
