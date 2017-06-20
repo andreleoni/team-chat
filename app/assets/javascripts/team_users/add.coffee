@@ -1,18 +1,25 @@
 $(document).on 'turbolinks:load', ->
-  $(".remove_team").on 'click', (e) =>
-    $('#remove_team_modal').modal('open')
-    $('.remove_team_form').attr('action', 'teams/' + e.target.id)
+  $(".add_user").on 'click', (e) =>
+    $('#add_user_modal').modal('open')
+    $('#team_user_team_id').val(e.target.id)
     return false
 
-  $('.remove_team_form').on 'submit', (e) ->
+  $('.add_user_form').on 'submit', (e) ->
     $.ajax e.target.action,
-        type: 'DELETE'
-        contentType:'application/json',
+        type: 'POST'
         dataType: 'json',
-        data: {}
+        data: {
+          team_user: {
+            email: $('#team_user_email').val()
+            team_id: $('#team_user_team_id').val()
+          }
+        }
         success: (data, text, jqXHR) ->
-          $(location).attr('href','/');
+          window.add(data['user']['name'], data['user']['id'], 'user')
+          Materialize.toast('Success in add User &nbsp;<b>:(</b>', 4000, 'green')
         error: (jqXHR, textStatus, errorThrown) ->
-          $('#remove_team_modal').modal('close')
-          Materialize.toast('Problem to delete Team &nbsp;<b>:(</b>', 4000, 'red')
+          Materialize.toast('Problem in add User &nbsp;<b>:(</b>', 4000, 'red')
+
+
+    $('#add_user_modal').modal('close')
     return false

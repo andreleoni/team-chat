@@ -5,7 +5,7 @@ json.messages do
     json.extract! message, :id, :body, :user_id
     json.date message.created_at.strftime("%d/%m/%y")
     json.user do
-      json.extract! message.user, :id, :name, :email
+      json.extract! message.user, :id, :first_name, :last_name, :email
     end
   end
 end
