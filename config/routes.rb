@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :channels, only: [:show, :create, :destroy]
   resources :talks, only: [:show]
   resources :teams, only: [:create, :destroy]
-  resources :team_users, only: [:create, :destroy]
+  resources :team_users, only: [:create, :destroy] do
+    post :disable
+  end
 
   get '/:slug', to: 'teams#show'
 

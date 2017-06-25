@@ -1,4 +1,6 @@
 class TeamUser < ApplicationRecord
+  enum status: [:disable, :active]
+
   belongs_to :team
   belongs_to :user
 

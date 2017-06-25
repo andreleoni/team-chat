@@ -1,12 +1,17 @@
 <div id="remove_team_modal" class="modal">
   <div class="modal-content">
     <div class="row">
-      <%= form_tag("teams/0", :method => :delete, class: "col s12 remove_team_form") do %>
+      <%= form_tag("teams/0", :method => :get, class: "col s12 remove_team_form") do %>
         <div class="row">
-          <div class="col s12">
-            <h4>Remove Team</h4>
-            <p>Are you sure you want to delete the team?</p>
+          <div class="col s12">            
+            <h4>
+              Remover Time
+            </h4>            
+            <p>
+              Tem certeza que deseja desabilitar seu usuário do time? Se alguém readicioná-lo você não perderá seu histórico...
+            </p>
           </div>
+          <input type="hidden" name="remove_user_team_id" id="remove_user_team_id">
           <div class="input-field col s12">
             <%= submit_tag("Remove", class: "btn red right") %>
           </div>
