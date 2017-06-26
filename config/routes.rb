@@ -2,8 +2,13 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
 
   resources :channels, only: [:show, :create, :destroy]
+  
   resources :talks, only: [:show]
-  resources :teams, only: [:create, :destroy]
+  
+  resources :teams, only: [:create, :destroy] do
+    get :post
+  end
+
   resources :team_users, only: [:create, :destroy] do
     post :disable
   end

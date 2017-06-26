@@ -30,6 +30,10 @@ class TeamsController < ApplicationController
     end
   end
 
+  def invite
+    InviteTeamMailer.invite_team_email(params[:email])
+  end
+
   private
 
   def set_by_slug_team
