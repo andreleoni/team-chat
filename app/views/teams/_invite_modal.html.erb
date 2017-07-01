@@ -1,13 +1,16 @@
 <div id="invite_team_modal" class="modal">
   <div class="modal-content">
     <div class="row">
-      <%= form_tag(controller: "teams", action: "invite", method: :post, class: "col s12") do %>
+      <%= form_tag("teams/0", method: :post, class: "col s12", id: "invite_team") do %>
         <div class="row">
           <div class="col s12">
             <h4>Convidar para o seu Time</h4>
           </div>
+          <input type="hidden" name="invite_team_id" id="invite_team_id"> </input>
+          
           <div class="input-field col s12">
-            <%= text_field(:email, :slug) %>            
+            <%= text_field_tag(:user_email) %>
+            <%= label_tag(:user_email, "Email") %>            
             <%= submit_tag("Convidar!", class: "btn right") %>
           </div>
         </div>

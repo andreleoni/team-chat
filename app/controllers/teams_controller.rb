@@ -31,7 +31,8 @@ class TeamsController < ApplicationController
   end
 
   def invite
-    InviteTeamMailer.invite_team_email(params[:email])
+    raise params.inspect
+    InviteTeamMailer.invite_team_email(params[:email]).deliver_now
   end
 
   private

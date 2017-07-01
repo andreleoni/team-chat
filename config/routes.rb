@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :talks, only: [:show]
   
   resources :teams, only: [:create, :destroy] do
-    get :post
+    post :invite
   end
 
   resources :team_users, only: [:create, :destroy] do
