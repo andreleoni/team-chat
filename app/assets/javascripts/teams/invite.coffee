@@ -12,7 +12,7 @@ $(document).on 'turbolinks:load', ->
         contentType:'application/json',
         dataType: 'json',
         data: { }
-        success: (data, text, jqXHR) ->          
+        success: (data, text, jqXHR) ->
           Materialize.toast('Convite enviado &nbsp;<b>:(</b>', 4000, 'green')
           $('#invite_team_modal').modal('close')
         error: (jqXHR, textStatus, errorThrown) ->

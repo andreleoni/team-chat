@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: [:destroy]
+  before_action :set_team, only: [:destroy, :invite]
   before_action :set_by_slug_team, only: [:show]
 
   def index
@@ -30,9 +30,8 @@ class TeamsController < ApplicationController
     end
   end
 
-  def invite
-    raise params.inspect
-    InviteTeamMailer.invite_team_email(params[:email]).deliver_now
+  def invite    
+    InviteTeamMailer.invite_team_email(params[:team_id], params[:email]).deliver_now
   end
 
   private
