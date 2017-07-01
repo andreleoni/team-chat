@@ -14,16 +14,7 @@ class TeamUsersController < ApplicationController
       end
     end
   end
-
-  # def destroy
-  #   authorize! :destroy, @team_user
-  #   @team_user.destroy
-
-  #   respond_to do |format|
-  #     format.json { render json: true }
-  #   end
-  # end
-
+  
   def disable
     if @team_user.present?
       authorize! :disable, @team_user

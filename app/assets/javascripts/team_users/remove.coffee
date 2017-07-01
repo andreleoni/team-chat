@@ -13,6 +13,7 @@ $(document).on 'turbolinks:load', ->
         success: (data, text, jqXHR) ->
           $('.user_' + $('#user_remove_id').val()).remove()
           Materialize.toast('Success in remove User &nbsp;<b>:(</b>', 4000, 'green')
+
         error: (jqXHR, textStatus, errorThrown) ->
           Materialize.toast('Problem to remove User &nbsp;<b>:(</b>', 4000, 'red')
 

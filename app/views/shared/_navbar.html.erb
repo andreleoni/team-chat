@@ -13,9 +13,6 @@
               <% current_user.my_teams.each do |team| %>
                 <li style: "display: flex;">              
                   <a href="/<%= team.slug %>"><%= team.slug %></a>
-                  <a href="#" class="secondary-content remove_team_user" id="<%= team.id %>">
-                    <i class="material-icons" id="<%= team.id %>">delete</i>
-                  </a>                  
                 </li>
                 <li class="divider"></li>
               <% end %>

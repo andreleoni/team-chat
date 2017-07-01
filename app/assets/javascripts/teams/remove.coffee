@@ -17,6 +17,8 @@ $(document).on 'turbolinks:load', ->
           $('.team_user_id_' + $('#remove_user_team_id').val()).remove()
           Materialize.toast('Success in delete Channel &nbsp;<b>:(</b>', 4000, 'green')
           $('#remove_team_modal').modal('close')
+          document.location.href = "/"
+
         error: (jqXHR, textStatus, errorThrown) ->
           Materialize.toast('Problem to delete Channel &nbsp;<b>:(</b>', 4000, 'red')
 
