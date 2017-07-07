@@ -4,10 +4,11 @@
       <a href="/" class="brand-logo"><i class="material-icons">chat_bubble_outline</i>TeamChat</a>
       <a href="#" data-activates="side-bar" class="button-collapse"><i class="material-icons">menu</i></a>
       <% if current_user %>
-        <%= image_tag current_user.avatar.url(:thumb) %>
+        
       <% end %>
       <ul class="right hide-on-med-and-down">
         <% if current_user %>
+          <li> <%= image_tag(current_user.avatar_url(:thumbnail), :width => 50, :height => 50) %> </li>
           <li><a href="/users/edit">Profile</a></li>
           <li>
             <a href="#" class='dropdown-button' data-activates='teams' data-beloworigin="true" alignment='left'>My Teams<i class="material-icons right">arrow_drop_down</i></a>

@@ -19,8 +19,9 @@ gem 'cancancan'
 gem 'materialize-sass'
 gem 'material_icons'
 gem 'redis'
-gem "paperclip", "~> 5.0.0"
-
+gem 'carrierwave'
+gem 'carrierwave-base64'
+gem 'cloudinary'
 
 group :development, :test do
   gem "factory_girl_rails"

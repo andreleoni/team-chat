@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dk8fep6gg
+  api_key: '654144929936566'
+  api_secret: QtSU_4HsH_wP8REHwerPTf76zT4
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dk8fep6gg
+  api_key: '654144929936566'
+  api_secret: QtSU_4HsH_wP8REHwerPTf76zT4
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dk8fep6gg
+  api_key: '654144929936566'
+  api_secret: QtSU_4HsH_wP8REHwerPTf76zT4
+  enhance_image_tag: true
+  static_image_support: false
