@@ -5,7 +5,7 @@ class TeamUsersController < ApplicationController
     @team_user = TeamUser.new(team_user_params)
     @team_user.status = :active
     authorize! :create, @team_user
-    
+
     respond_to do |format|
       if @team_user.save
         format.json { render :show, status: :created }
@@ -14,12 +14,12 @@ class TeamUsersController < ApplicationController
       end
     end
   end
-  
+
   def disable
     if @team_user.present?
       authorize! :disable, @team_user
-      @team_user.update_attribute(:status, :disable) 
-      
+      @team_user.update_attribute(:status, :disable)
+
     elsif @team.present?
       authorize! :destroy, Team
       @team.destroy

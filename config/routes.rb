@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :notifies
   mount ActionCable.server => '/cable'
 
   resources :channels, only: [:show, :create, :destroy]

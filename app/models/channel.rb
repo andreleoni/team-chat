@@ -1,5 +1,7 @@
 class Channel < ApplicationRecord
   has_many :messages, as: :messagable, :dependent => :destroy
+  has_many :notify, as: :notifyable, :dependent => :destroy
+
   belongs_to :team
   belongs_to :user
 
